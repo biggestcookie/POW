@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4233333683364148}
   - component: {fileID: 212980808783622316}
   - component: {fileID: 61829638552311640}
+  - component: {fileID: 114067057682129666}
   - component: {fileID: 114137186845751870}
   - component: {fileID: 114476393908705316}
   m_Layer: 8
@@ -36,8 +37,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1756519188761054}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.259622, y: 1.4511201, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -4.586854, y: 1.0838175, z: 0.0078125}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -68,6 +69,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &114067057682129666
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1756519188761054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 721a487acf02f9f46b89200c4cb78e80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isActive: 0
 --- !u!114 &114137186845751870
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -81,7 +94,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collisionMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   horizontalRayCount: 4
   verticalRayCount: 4
 --- !u!114 &114476393908705316
@@ -95,6 +108,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41b48ccfab0d8984089687f3f8a840f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxJumpHeight: 3
+  minJumpHeight: 1
+  timeToJumpApex: 0.3
+  moveSpeed: 6
+  fireRate: 0
+  direction: 0
 --- !u!212 &212980808783622316
 SpriteRenderer:
   m_ObjectHideFlags: 1
