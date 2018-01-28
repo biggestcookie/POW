@@ -2,9 +2,8 @@
 using System.Collections;
 
 [RequireComponent(typeof(BoxCollider2D))]
-public class Controller2D : MonoBehaviour
+public class PhysicsComponent : MonoBehaviour
 {
-
     public LayerMask collisionMask;
 
     const float skinWidth = .015f;
@@ -17,12 +16,16 @@ public class Controller2D : MonoBehaviour
     BoxCollider2D collider;
     RaycastOrigins raycastOrigins;
     public CollisionInfo collisions;
+    InteractObject ControlledObject;
+
 
     void Start()
     {
         collider = GetComponent<BoxCollider2D>();
+        ControlledObject = GetComponent<InteractObject>();
         CalculateRaySpacing();
     }
+
 
     public void Move(Vector3 velocity)
     {
