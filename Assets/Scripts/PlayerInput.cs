@@ -9,8 +9,8 @@ public class PlayerInput : MonoBehaviour
     public bool isActive;
     Player player;
     PlayerInput input;
+    GameObject lightning;
     GameObject[] playerList;
-    //public GameObject lightning;
     new GameObject camera;
     Light lighter;
     private void Start()
@@ -19,7 +19,7 @@ public class PlayerInput : MonoBehaviour
         camera = GameObject.FindGameObjectWithTag("MainCamera");
         player = GetComponent<Player>();
         lighter = gameObject.GetComponentInChildren(typeof(Light)) as Light;
-        //lightning = GameObject.FindGameObjectWithTag("Lightning");
+        lightning = GameObject.FindGameObjectWithTag("Lightning");
     }
     private void Update()
     {
@@ -62,16 +62,16 @@ public class PlayerInput : MonoBehaviour
         camera.GetComponent<Tracker>().active = gameObject;
         AddLight();
         isActive = true;
-        /*float SizeScale = 1.0f;
+        float SizeScale = 1.0f;
         Vector2 NewSize = new Vector2();
-        // SpriteRenderer lightningRenderer = lightning.GetComponent<SpriteRenderer>();
+        SpriteRenderer lightningRenderer = lightning.GetComponent<SpriteRenderer>();
         print(Vector3.Distance(FirstPosition, transform.position) / SizeScale);
         NewSize.Set(Vector3.Distance(transform.position, FirstPosition) / SizeScale, lightningRenderer.size.y);
-        //lightningRenderer.size = NewSize;
+        lightningRenderer.size = NewSize;
 
         // Set Rotation
-        //lightning.transform.rotation = Quaternion.Euler(0, 0, 0);
-        //lightning.transform.Rotate(0, 0, AngleBetweenVector2(FirstPosition, transform.position));
+        lightning.transform.rotation = Quaternion.Euler(0, 0, 0);
+        lightning.transform.Rotate(0, 0, AngleBetweenVector2(FirstPosition, transform.position));
 
         // Set Position
         float posOffset = 0.0f;
@@ -87,9 +87,19 @@ public class PlayerInput : MonoBehaviour
         VectorOffset.Set(posOffset, 0);
         lightning.transform.position = FirstPosition + VectorOffset;
 
-        FirstPosition = transform.position;*/
+        FirstPosition = transform.position;
+        StartCoroutine(ToggleVisiblity(0.5f));
     }
-    /*void AddLight()
+
+
+    IEnumerator ToggleVisiblity(float seconds)
+    {
+        SpriteRenderer lightningRenderer = lightning.GetComponent<SpriteRenderer>();
+        lightningRenderer.enabled = true;
+        yield return new WaitForSeconds(seconds);
+        lightningRenderer.enabled = false;
+    }
+    void AddLight()
     {
         if (lighter != null)
         {
@@ -101,5 +111,5 @@ public class PlayerInput : MonoBehaviour
         Vector2 diference = vec2 - vec1;
         float sign = (vec2.y < vec1.y) ? -1.0f : 1.0f;
         return Vector2.Angle(Vector2.right, diference) * sign;
-    }*/
+    }
 }
