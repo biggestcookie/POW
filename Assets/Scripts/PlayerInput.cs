@@ -35,7 +35,7 @@ public class PlayerInput : MonoBehaviour
             {
                 isActive = true;
             }
-            if (Input.GetButtonUp("Fire3"))
+            if (Input.GetButtonDown("Fire3"))
             {
                 player.OnAbilityInputDown();
             }

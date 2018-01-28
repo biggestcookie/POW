@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 114675535175777392}
   - component: {fileID: 114289379947627850}
   - component: {fileID: 114867903815525442}
+  - component: {fileID: 95481995252637722}
   m_Layer: 8
   m_Name: Gate
   m_TagString: Player
@@ -38,8 +39,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1631278461631556}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.26, y: -1.78, z: 0}
-  m_LocalScale: {x: 4.4037776, y: 3.8498106, z: 1}
+  m_LocalPosition: {x: 27.15, y: -0.01, z: 0}
+  m_LocalScale: {x: 10.900108, y: 9.528944, z: 2.4751723}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -69,6 +70,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.6372057, y: 0.48301458}
   m_EdgeRadius: 0
+--- !u!95 &95481995252637722
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1631278461631556}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ba07be495eb0b664d8d6df50e3d009e6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114289379947627850
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -96,7 +114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 721a487acf02f9f46b89200c4cb78e80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 1
+  isActive: 0
 --- !u!114 &114867903815525442
 MonoBehaviour:
   m_ObjectHideFlags: 1
