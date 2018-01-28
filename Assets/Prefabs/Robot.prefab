@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 114715508783256014}
   - component: {fileID: 114289294274005068}
   - component: {fileID: 114715467209189242}
+  - component: {fileID: 95369092740871640}
   m_Layer: 8
   m_Name: Robot
   m_TagString: Player
@@ -38,8 +39,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1817127347592596}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.81, y: -2.45, z: 0}
-  m_LocalScale: {x: 4.4037776, y: 3.8498106, z: 1}
+  m_LocalPosition: {x: 5.83, y: -1.26, z: 0}
+  m_LocalScale: {x: 11.756349, y: 10.277475, z: 2.6696055}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -56,7 +57,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.00540971, y: -0.053505726}
+  m_Offset: {x: -0.014608368, y: -0.012797058}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -67,8 +68,25 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.15073027, y: 0.19593193}
+  m_Size: {x: 0.15517873, y: 0.27734923}
   m_EdgeRadius: 0
+--- !u!95 &95369092740871640
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1817127347592596}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7eaefe16bb3555947b7f7bb65d5b540b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114289294274005068
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -96,10 +114,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41b48ccfab0d8984089687f3f8a840f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxJumpHeight: 0
-  minJumpHeight: 0
-  timeToJumpApex: 0.3
-  moveSpeed: 2
+  maxJumpHeight: 4
+  minJumpHeight: 2
+  timeToJumpApex: 0.4
+  moveSpeed: 4
   fireRate: 0
   direction: 1
   directionalInput: {x: 0, y: 0}
@@ -114,7 +132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 721a487acf02f9f46b89200c4cb78e80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 1
+  isActive: 0
 --- !u!212 &212445578128165534
 SpriteRenderer:
   m_ObjectHideFlags: 1

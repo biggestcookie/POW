@@ -31,7 +31,7 @@ public class Player : MonoBehaviour
         maxJumpVelocity = Mathf.Abs(gravity) * timeToJumpApex;
         minJumpVelocity = Mathf.Sqrt(2 * Mathf.Abs(gravity) * minJumpHeight);
         direction = true;
-        //animator = GetComponent<Animator>();
+        animator = GetComponent<Animator>();
 
     }
     void Update()
@@ -42,12 +42,16 @@ public class Player : MonoBehaviour
             velocity.y = 0;
         if ((velocity.x > 0 && !direction) || (velocity.x < 0 && direction))
             FlipSprite();
-        //animator.SetBool("inAir", !controller2D.collisions.below);
-        //animator.SetFloat("speed", Mathf.Abs(velocity.x));
+        animator.SetBool("inAir", !controller2D.collisions.below);
+        animator.SetFloat("speed", Mathf.Abs(velocity.x));
     }
     public void SetDirectionalInput(Vector2 input)
     {
         directionalInput = input;
+    }
+    public void SetActive(bool x)
+    {
+        animator.SetBool("active", x);
     }
 
     public void OnJumpInputDown()
@@ -63,6 +67,10 @@ public class Player : MonoBehaviour
         {
             velocity.y = minJumpVelocity;
         }
+    }
+    public void OnAbilityInputDown()
+    {
+        animator.SetBool("ability", true);
     }
     /*public void OnMousePress()
     {

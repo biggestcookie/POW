@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 114112378902973204}
   - component: {fileID: 114298128007517236}
   - component: {fileID: 114482453642316294}
+  - component: {fileID: 95284400673670318}
   m_Layer: 8
   m_Name: Battery
   m_TagString: Player
@@ -38,8 +39,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1740437206434014}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.43, y: -2.81, z: 0}
-  m_LocalScale: {x: 4.4037776, y: 3.8498106, z: 1}
+  m_LocalPosition: {x: -4.89, y: -2.45, z: 0}
+  m_LocalScale: {x: 10.054817, y: 8.789986, z: 2.2832255}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -69,6 +70,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.16130216, y: 0.08379993}
   m_EdgeRadius: 0
+--- !u!95 &95284400673670318
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1740437206434014}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bd39f3c0a10499040ab92a8b0cc562df, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114112378902973204
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -111,7 +129,7 @@ MonoBehaviour:
   maxJumpHeight: 5
   minJumpHeight: 1
   timeToJumpApex: 0.3
-  moveSpeed: 6
+  moveSpeed: 2
   fireRate: 0
   direction: 1
   directionalInput: {x: 0, y: 0}

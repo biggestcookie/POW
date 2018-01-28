@@ -8,9 +8,14 @@ public class Tracker : MonoBehaviour
     private Vector2 velocity;
     public float smoothTimeX;
     public GameObject active;
+    float posX;
+
     void Update()
     {
-        float posX = Mathf.SmoothDamp((transform.position.x - offset.x), active.transform.position.x, ref velocity.x, smoothTimeX);
+        posX = Mathf.SmoothDamp((transform.position.x - offset.x), active.transform.position.x, ref velocity.x, smoothTimeX);
+    }
+    void LateUpdate()
+    {
         transform.position = new Vector3(posX, transform.position.y, transform.position.z);
     }
 }

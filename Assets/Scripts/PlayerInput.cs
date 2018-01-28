@@ -14,11 +14,13 @@ public class PlayerInput : MonoBehaviour
         playerList = GameObject.FindGameObjectsWithTag("Player");
         camera = GameObject.FindGameObjectWithTag("MainCamera");
         player = GetComponent<Player>();
+
     }
     private void Update()
     {
         if (isActive)
         {
+            player.SetActive(isActive);
             Vector2 directionalInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
             player.SetDirectionalInput(directionalInput);
             if (Input.GetButtonDown("Fire1"))
@@ -33,6 +35,10 @@ public class PlayerInput : MonoBehaviour
             {
                 isActive = true;
             }
+            if (Input.GetButtonUp("Fire3"))
+            {
+                player.OnAbilityInputDown();
+            }
         }
     }
     void OnMouseDown()
@@ -41,6 +47,7 @@ public class PlayerInput : MonoBehaviour
         {
             players.GetComponent<PlayerInput>().isActive = false;
             players.GetComponent<Player>().directionalInput = Vector2.zero;
+            players.GetComponent<Player>().SetActive(false);
         }
         camera.GetComponent<Tracker>().active = gameObject;
         isActive = true;
