@@ -7,10 +7,12 @@ public class PlayerInput : MonoBehaviour
 {
     public bool isActive;
     Player player;
-    GameObject[] players;
+    GameObject[] playerList;
+    GameObject camera;
     private void Start()
     {
-        players = GameObject.FindGameObjectsWithTag("Player");
+        playerList = GameObject.FindGameObjectsWithTag("Player");
+        camera = GameObject.FindGameObjectWithTag("MainCamera");
         player = GetComponent<Player>();
     }
     private void Update()
@@ -35,11 +37,12 @@ public class PlayerInput : MonoBehaviour
     }
     void OnMouseDown()
     {
-        foreach (GameObject gameObject in players)
+        foreach (GameObject players in playerList)
         {
-            gameObject.GetComponent<PlayerInput>().isActive = false;
-            gameObject.GetComponent<Player>().directionalInput = Vector2.zero;
+            players.GetComponent<PlayerInput>().isActive = false;
+            players.GetComponent<Player>().directionalInput = Vector2.zero;
         }
+        camera.GetComponent<Tracker>().active = gameObject;
         isActive = true;
     }
 }
