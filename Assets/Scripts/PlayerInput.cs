@@ -8,7 +8,7 @@ public class PlayerInput : MonoBehaviour
     public bool isActive;
     Player player;
     GameObject[] playerList;
-    GameObject camera;
+    new GameObject camera;
     private void Start()
     {
         playerList = GameObject.FindGameObjectsWithTag("Player");
