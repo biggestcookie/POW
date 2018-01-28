@@ -7,14 +7,16 @@ public class PlayerInput : MonoBehaviour
 {
     public bool isActive;
     Player player;
+    PlayerInput input;
     GameObject[] playerList;
     new GameObject camera;
+    Light lighter;
     private void Start()
     {
         playerList = GameObject.FindGameObjectsWithTag("Player");
         camera = GameObject.FindGameObjectWithTag("MainCamera");
         player = GetComponent<Player>();
-
+        lighter = gameObject.GetComponentInChildren(typeof(Light)) as Light;
     }
     private void Update()
     {
@@ -45,11 +47,24 @@ public class PlayerInput : MonoBehaviour
     {
         foreach (GameObject players in playerList)
         {
-            players.GetComponent<PlayerInput>().isActive = false;
+            input = players.GetComponent<PlayerInput>();
+            input.isActive = false;
             players.GetComponent<Player>().directionalInput = Vector2.zero;
-            players.GetComponent<Player>().SetActive(false);
+            if (input.lighter != null)
+            {
+                input.lighter.intensity = 0;
+            }
+
         }
         camera.GetComponent<Tracker>().active = gameObject;
+        AddLight();
         isActive = true;
+    }
+    void AddLight()
+    {
+        if (lighter != null)
+        {
+            lighter.intensity = 3;
+        }
     }
 }

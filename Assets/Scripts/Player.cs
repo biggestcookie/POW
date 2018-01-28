@@ -70,9 +70,8 @@ public class Player : MonoBehaviour
     }
     public void OnAbilityInputDown()
     {
-        animator.SetTrigger("ability");
+        animator.SetBool("ability", true);
     }
-
     /*public void OnMousePress()
     {
         if (Time.time > nextFire)
