@@ -44,12 +44,14 @@ public class PlayerInput : MonoBehaviour
             {
                 player.OnAbilityInputDown();
             }
+            FirstPosition = transform.position;
         }
     }
     void OnMouseDown()
     {
         foreach (GameObject players in playerList)
         {
+            players.GetComponent<Player>().SetActive(false);
             input = players.GetComponent<PlayerInput>();
             input.isActive = false;
             players.GetComponent<Player>().directionalInput = Vector2.zero;
